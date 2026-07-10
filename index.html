@@ -1,23 +1,856 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+  <!-- Schema.org LegalService 마크업(JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "일산개인회생 법률상담 센터",
+    "image": "https://info.reliabledone.com/images/ilsan-logo.png",
+    "url": "https://info.reliabledone.com/goyang-court-guide",
+    "telephone": "031-901-1234",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "경기도 고양시 일산동구 중앙로 123",
+      "addressLocality": "고양시 일산동구",
+      "addressRegion": "경기",
+      "postalCode": "10400",
+      "addressCountry": "KR"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "고양시" },
+      { "@type": "AdministrativeArea", "name": "일산동구" },
+      { "@type": "AdministrativeArea", "name": "일산서구" }
+    ],
+    "priceRange": "₩₩₩",
+    "description": "2026년 최신 일산개인회생 비용, 기간, 자격 요건 분석 및 일산지방법원 관할 특성 맞춤형 법률 컨설팅 서비스를 제공합니다."
+  }
+  </script>
+
+  <style>
+    /* 다채롭고 부드러운 색감 및 명확한 시각적 계층 구조 적용 */
+    body { 
+      font-family: 'Noto Sans KR', sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      background: #f4f6fc; 
+      color: #1e293b; 
+      line-height: 1.75; 
+    }
+    
+    header { 
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6); 
+      color: #ffffff; 
+      padding: 60px 20px; 
+      text-align: center; 
+      box-shadow: 0 4px 15px rgba(30, 41, 59, 0.1); 
+    }
+    
+    header h1 { 
+      font-size: 2.8rem; 
+      margin: 0 0 15px 0; 
+      font-weight: 700; 
+      letter-spacing: -0.05em; 
+    }
+    
+    header p { 
+      font-size: 1.25rem; 
+      margin: 0 0 30px 0; 
+      opacity: 0.9; 
+    }
+
+    nav { 
+      background: #ffffff; 
+      border-bottom: 1px solid #e2e8f0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+    }
+    
+    nav ul { 
+      list-style: none; 
+      display: flex; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+      margin: 0; 
+      padding: 10px 0; 
+    }
+    
+    nav li { 
+      margin: 5px 15px; 
+    }
+    
+    nav a { 
+      color: #475569; 
+      font-weight: 600; 
+      text-decoration: none; 
+      font-size: 0.95rem; 
+      transition: color 0.2s ease; 
+    }
+    
+    nav a:hover { 
+      color: #3b82f6; 
+    }
+
+    section, article { 
+      max-width: 1000px; 
+      margin: 30px auto; 
+      padding: 40px; 
+      background: #ffffff; 
+      border-radius: 16px; 
+      box-shadow: 0 4px 20px rgba(30, 41, 59, 0.05); 
+      border: 1px solid #e2e8f0; 
+    }
+
+    h2 { 
+      color: #1e3a8a; 
+      font-size: 1.85rem; 
+      margin-bottom: 25px; 
+      border-left: 6px solid #3b82f6; 
+      padding-left: 15px; 
+      letter-spacing: -0.03em; 
+    }
+
+    h3 { 
+      color: #2563eb; 
+      font-size: 1.4rem; 
+      margin-top: 30px; 
+      margin-bottom: 15px; 
+    }
+
+    p { 
+      margin-bottom: 20px; 
+      color: #334155; 
+      text-align: justify; 
+    }
+
+    ul, ol { 
+      padding-left: 25px; 
+      margin-bottom: 25px; 
+      color: #334155; 
+    }
+
+    li { 
+      margin-bottom: 10px; 
+    }
+
+    table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      margin: 30px 0; 
+      font-size: 0.95rem; 
+    }
+
+    th, td { 
+      border: 1px solid #cbd5e1; 
+      padding: 14px 16px; 
+      text-align: left; 
+    }
+
+    th { 
+      background: #f1f5f9; 
+      color: #1e3a8a; 
+      font-weight: 700; 
+    }
+
+    tr:nth-child(even) { 
+      background: #f8fafc; 
+    }
+
+    a { 
+      color: #2563eb; 
+      text-decoration: none; 
+      font-weight: 500; 
+    }
+
+    a:hover { 
+      text-decoration: underline; 
+    }
+
+    /* 시각적 지표 및 그래프 스타일링 */
+    .visual-chart { 
+      background: #f8fafc; 
+      border: 1px solid #e2e8f0; 
+      border-radius: 12px; 
+      padding: 25px; 
+      margin: 30px 0; 
+    }
+    
+    .chart-bar-container { 
+      margin-bottom: 15px; 
+    }
+    
+    .chart-label { 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      color: #475569; 
+      margin-bottom: 5px; 
+    }
+    
+    .chart-track { 
+      background: #e2e8f0; 
+      border-radius: 8px; 
+      overflow: hidden; 
+      height: 20px; 
+    }
+    
+    .chart-fill { 
+      background: linear-gradient(90deg, #3b82f6, #1d4ed8); 
+      height: 100%; 
+      border-radius: 8px; 
+    }
+
+    /* 계산기 섹션 디자인 */
+    .calculator-wrapper { 
+      background: #f0fdf4; 
+      border: 1px solid #bbf7d0; 
+      border-radius: 16px; 
+      padding: 30px; 
+      margin: 30px 0; 
+    }
+    
+    .calculator-form { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 20px; 
+    }
+    
+    .calc-group { 
+      display: flex; 
+      flex-direction: column; 
+    }
+    
+    .calc-group label { 
+      font-weight: 600; 
+      margin-bottom: 8px; 
+      color: #166534; 
+    }
+    
+    .calc-group input, .calc-group select { 
+      padding: 12px; 
+      border: 1px solid #cbd5e1; 
+      border-radius: 8px; 
+      font-size: 1rem; 
+      background: #ffffff; 
+    }
+
+    .calc-btn { 
+      grid-column: span 2; 
+      background: #16a34a; 
+      color: #ffffff; 
+      padding: 14px; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 1.1rem; 
+      font-weight: 700; 
+      cursor: pointer; 
+      transition: background 0.2s ease; 
+    }
+    
+    .calc-btn:hover { 
+      background: #15803d; 
+    }
+
+    .calculator-result { 
+      margin-top: 25px; 
+      padding: 20px; 
+      background: #ffffff; 
+      border-radius: 12px; 
+      border: 1.5px dashed #86efac; 
+      display: none; 
+    }
+    
+    .result-item { 
+      display: flex; 
+      justify-content: space-between; 
+      padding: 8px 0; 
+      border-bottom: 1px solid #f1f5f9; 
+    }
+    
+    .result-item:last-child { 
+      border-bottom: none; 
+    }
+    
+    .result-val { 
+      font-weight: 700; 
+      color: #166534; 
+    }
+
+    /* 상담 문의 양식 디자인 */
+    .contact-form-wrapper { 
+      background: #fdf2f8; 
+      border: 1px solid #fbcfe8; 
+      border-radius: 16px; 
+      padding: 35px; 
+      margin-top: 40px; 
+    }
+    
+    .contact-form-wrapper h3 { 
+      color: #9d174d; 
+      margin-top: 0; 
+      margin-bottom: 25px; 
+    }
+
+    .form-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 20px; 
+    }
+    
+    .form-full { 
+      grid-column: span 2; 
+    }
+
+    .form-group { 
+      display: flex; 
+      flex-direction: column; 
+    }
+    
+    .form-group label { 
+      font-weight: 600; 
+      margin-bottom: 8px; 
+      color: #475569; 
+    }
+    
+    .form-group input, .form-group select, .form-group textarea { 
+      padding: 12px; 
+      border: 1px solid #cbd5e1; 
+      border-radius: 8px; 
+      font-size: 0.95rem; 
+      background: #ffffff; 
+    }
+    
+    .form-group textarea { 
+      resize: vertical; 
+    }
+
+    .checkbox-group { 
+      flex-direction: row; 
+      align-items: center; 
+      gap: 10px; 
+      margin-top: 10px; 
+    }
+    
+    .checkbox-group input { 
+      width: 18px; 
+      height: 18px; 
+    }
+
+    .btn-cta { 
+      display: block; 
+      width: 100%; 
+      padding: 16px; 
+      background: #ec4899; 
+      color: #ffffff; 
+      font-size: 1.15rem; 
+      font-weight: 700; 
+      border: none; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      text-align: center; 
+      transition: background 0.2s ease, transform 0.1s ease; 
+      box-shadow: 0 4px 10px rgba(236, 72, 153, 0.2); 
+    }
+    
+    .btn-cta:hover { 
+      background: #db2777; 
+      transform: translateY(-1px); 
+    }
+    
+    .btn-cta:active { 
+      transform: translateY(1px); 
+    }
+
+    /* 내부 앵커 */
+    .anchor { 
+      display: block; 
+      position: relative; 
+      top: -100px; 
+      visibility: hidden; 
+    }
+
+    /* 푸터 스타일링 */
+    footer { 
+      max-width: 1000px; 
+      margin: 40px auto; 
+      padding: 30px; 
+      background: #1e293b; 
+      color: #cbd5e1; 
+      border-radius: 16px; 
+      text-align: center; 
+      font-size: 0.9rem; 
+    }
+    
+    footer a { 
+      color: #93c5fd; 
+    }
+
+    /* 반응형 구조 */
+    @media (max-width: 768px) {
+      header { padding: 40px 15px; }
+      header h1 { font-size: 2rem; }
+      section, article { padding: 20px; margin: 15px; }
+      .calculator-form, .form-grid { grid-template-columns: 1fr; }
+      .calc-btn, .btn-cta { grid-column: span 1; }
+      .form-full { grid-column: span 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>일산개인회생 법률상담 센터</h1>
+    <p>2026년 최신 기준 반영 및 일산 지역 맞춤 채무 설계로 무거운 부담을 덜어드립니다</p>
+    <a href="#contact" style="display:inline-block; padding:12px 28px; background:#ffffff; color:#1e3a8a; font-weight:700; border-radius:30px; text-decoration:none; box-shadow:0 4px 6px rgba(0,0,0,0.1);">지금 무료상담 신청하기</a>
+  </header>
+
+  <nav aria-label="페이지 내부 빠른 이동">
+    <ul>
+      <li><a href="#introduction">개요 및 2026 동향</a></li>
+      <li><a href="#jurisdiction">법원 관할 및 지역 분석</a></li>
+      <li><a href="#age-strategy">연령대별 맞춤 전략</a></li>
+      <li><a href="#calculator">변제금 자가 계산기</a></li>
+      <li><a href="#cost-analysis">비용 및 수임료 상세</a></li>
+      <li><a href="#community-review">커뮤니티 후기 분석</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+      <li><a href="#contact">견적 상담 신청</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section 1: 개요 및 2026년 최신 동향 -->
+  <section id="introduction">
+    <span id="introduction-anchor" class="anchor"></span>
+    <h2>일산개인회생 개요 및 2026년 최신 사법제도 변화 동향</h2>
+    <p>
+      2026년 현재 고물가와 불안정한 고금리 구조 속에서 가계 부채 문제를 극복하기 위한 대안으로 개인회생 제도가 주목받고 있습니다. 개인회생은 성실하지만 불운한 채무자가 소득에서 필수적인 생활비를 제외한 가용 소득을 바탕으로 최장 3년에서 5년 동안 법원이 인가한 채무를 성실히 변제하면 남은 원금과 이자를 전액 면책받을 수 있는 공적 채무조정 시스템입니다. 
+    </p>
+    <p>
+      올해 2026년 개인회생 절차에서 가장 두드러진 변화는 보건복지부가 고시한 기준 중위소득의 대폭 상향과 그에 따른 가구별 최저생계비의 증대입니다. 2026년도 최저생계비는 전년 대비 대폭 개선되어, 1인 가구 기준 기본 보장 생계비가 약 153만 8,543원 수준으로 결정되었습니다. 이는 과도한 채무로 고통받는 신규 신청인들이 매달 적립해야 할 평균 변제 금액 자체를 낮추는 아주 유의미한 변곡점으로 작용하고 있습니다.
+    </p>
+    <p>
+      또한, 금융위원회의 마이데이터 활성화 지침과 연계되어 과거 개인회생 접수를 위해 금융기관들을 일일이 돌아다니며 발급받아야 했던 부채증명서 서류 절차가 어플과 앱 기반의 다이렉트 서비스로 통합 지원되고 있습니다. 이에 따라 복잡한 서류 수집 과정이 획기적으로 간소화되었으며, 전반적인 신청 준비 기간도 크게 단축되었습니다. 
+    </p>
+    
+    <div class="visual-chart">
+      <div class="chart-label">연도별 1인 가구 기준 법정 최저생계비 변동 추이 (원)</div>
+      
+      <div class="chart-bar-container">
+        <div class="chart-label">2024년 기준 (약 1,330,000원)</div>
+        <div class="chart-track"><div class="chart-fill" style="width: 86%;"></div></div>
+      </div>
+      
+      <div class="chart-bar-container">
+        <div class="chart-label">2025년 기준 (약 1,435,000원)</div>
+        <div class="chart-track"><div class="chart-fill" style="width: 93%;"></div></div>
+      </div>
+      
+      <div class="chart-bar-container">
+        <div class="chart-label">2026년 기준 (1,538,543원 - 역대 최대 상향)</div>
+        <div class="chart-track"><div class="chart-fill" style="width: 100%;"></div></div>
+      </div>
+      <p style="font-size:0.85rem; color:#64748b; margin-top:10px; text-align:center;">
+        중위소득 증가에 따른 최저생계비의 인상은 동일한 소득이라도 법원에 납부할 예상 월 변제금을 낮추는 혜택을 줍니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: 관할 법원 분석 및 지역별 특성 -->
+  <section id="jurisdiction">
+    <span id="jurisdiction-anchor" class="anchor"></span>
+    <h2>의정부지방법원 관할 특성 및 일산 지역 세부 분석</h2>
+    <p>
+      고양시 일산동구 및 일산서구 지역에 거주하거나 해당 지역에 직장, 주된 영업소를 둔 채무자의 일산개인회생 관할 법원은 <strong>의정부지방법원</strong> 본원입니다. 고양시 장항동에 고양지원이 소재하고 있으나, 개인회생 및 파산과 같은 도산 사건은 고양지원에서 직접 다루지 않고 전량 의정부지방법원 본원(의정부동 소재)에서 일괄 심리 및 결정을 선고합니다.
+    </p>
+    <p>
+      의정부지방법원은 실무적으로 보정권고 기준이 상대적으로 철저하고 꼼꼼하기로 이름나 있습니다. 특히 신청인이 소유한 재산 가치 평가와 최근 1년 이내의 신규 대출금 사용처 소명, 주식이나 가상화폐 투자 손실액 보정 등에 관해 한층 엄밀하게 문서를 검증합니다. 하지만 신청 단계에서 법률대리인인 전문 업체와 협력해 세밀한 변제안을 제출한다면 일산지법 관할 사건 역시 원활히 개시 결정을 받을 수 있습니다. 만약 채무자의 직장 주소지가 서울에 위치하고 있다면 관할 선택권을 활용하여 보다 신속한 서울회생법원으로 다이렉트 접수하는 방안도 세밀하게 검토해 볼 가치가 있습니다.
+    </p>
+    
+    <h3>일산 및 덕양구 포함 고양시 30여 개 행정동별 주요 타겟 분석</h3>
+    <p>
+      저희 센터는 일산 및 고양시 전역의 지역별 특성에 맞춤형 컨설팅을 제공하며, 각 행정 구역의 연령별 분포와 상권 유형을 분석하여 법원이 납득할 수 있는 생계비 및 추가 지출 소명 자료를 개발하고 있습니다.
+    </p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>행정동 구분</th>
+          <th>해당 지역명 목록 (고양시 관내)</th>
+          <th>주요 채무 발생 요인 및 분석 특징</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>일산동구 권역</td>
+          <td>식사동, 중산동, 정발산동, 장항동, 마두동, 백석동, 풍동, 산황동, 사리현동, 지영동, 설문동, 문봉동, 성석동, 풍산동</td>
+          <td>장항동 상업지구 요식업 자영업자들의 운영난, 마두동과 백석동 등 역세권 오피스텔 거주 20대와 30대의 고금리 생활비 대출 등 복합적 발생.</td>
+        </tr>
+        <tr>
+          <td>일산서구 권역</td>
+          <td>일산동, 탄현동, 대화동, 덕이동, 가좌동, 구산동, 법곳동, 주엽동, 송포동, 송산동</td>
+          <td>가좌동과 덕이동 아파트 단지 주택담보대출 이자 부담을 겪는 40대 가장들의 가계 적자, 대화동 킨텍스 주변 소상공인들의 누적된 부채 현황.</td>
+        </tr>
+        <tr>
+          <td>덕양구 연계 권역</td>
+          <td>효자동, 신도동, 창릉동, 고양동, 관산동, 능곡동, 화정동, 행신동, 삼송동, 원흥동</td>
+          <td>삼송동과 원흥동, 창릉 신도시 지역 신규 입주 가구들의 무리한 담보 및 신용 채무, 화정동과 행신동 중심가 자영업 다중채무 발생 증가.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 3: 연령대별 맞춤형 회생 전략 -->
+  <section id="age-strategy">
+    <span id="age-strategy-anchor" class="anchor"></span>
+    <h2>연령대별 채무 양상 및 맞춤 컨설팅 전략</h2>
+    <p>
+      채무자가 처한 연령별 조건과 소득 종류에 따라 법원에 어필해야 할 핵심 쟁점은 매우 다릅니다. 일산개인회생 법률상담 센터는 획일적인 서류 작성을 탈피하고, 각 세대의 사회경제적 환경을 반영하는 고차원 변제계획안을 도출합니다.
+    </p>
+    
+    <h3>1. 20대 청년층 및 신입 사원</h3>
+    <p>
+      최근 구직난과 전세 사기 피해, 그리고 학자금 및 소액 신용 대출 누적으로 고통받는 20대 청년층이 급격히 증가하고 있습니다. 이 시기에는 직장에서 일한 경력이 짧아 고용 형태가 비정규직, 아르바이트, 프리랜서인 경우가 많습니다. 법원은 청년층의 장래 소득 창출 가능성을 높게 보기 때문에 지속적이고 확실한 소득 증빙을 집중 검토합니다. 20대 청년들에게는 정부 지원금 혜택이나 청년 특례 제도를 비교 안내하여 가용한 탕감율을 최대화하는 방향의 다이렉트 솔루션을 조언해 드립니다.
+    </p>
+
+    <h3>2. 30대 회사원 및 주부</h3>
+    <p>
+      30대 직장인들은 결혼, 주거 마련, 육아 등으로 급증한 신용대출 및 대부업체 고금리 채무가 주요 이슈입니다. 인터넷 쇼핑몰 결제대금이나 카카오톡, 토스 등 간편 어플을 통한 카드론 대출이 얽혀 있는 다중채무가 많습니다. 주부의 경우에는 본인 명의 소득이 없더라도 가사 노동의 가치를 간접 증빙하거나 비정기 파트타임 소득을 정밀하게 구성하여 신청 요건을 가입 단계부터 철저하게 맞춰 나갑니다.
+    </p>
+
+    <h3>3. 40대 가장 및 외벌이 직장인</h3>
+    <p>
+      가정에 자녀와 노부모 등 실질적인 부양가족이 가장 많은 시기입니다. 1인 기준 법정 최저생계비만으로는 실제 생활 유지가 불가능하므로 부양가족 수 소명이 변제 금액을 낮추는 최대의 핵심 변수입니다. 자녀들의 교육비와 가족 구성원의 지속적인 병원 치료비를 합법적인 추가 생계비로 인정받기 위한 구체적인 입증 자료 수집 방법을 제시합니다.
+    </p>
+
+    <h3>4. 50대 자영업자 및 소상공인</h3>
+    <p>
+      식사동이나 정발산동 등지에서 프랜차이즈 가맹점이나 개인 업체를 운영하다가 매출 급감으로 큰 채무를 안게 된 소상공인층입니다. 급여 소득자와 달리 세무서 신고 소득이 낮거나 카드 매출 대비 경비 지출 증빙이 누락된 경우가 허다합니다. 이 경우에는 실질적인 장부 분석 컨설팅을 통해 순이익을 합리적으로 계산하여 변제 예정 금액을 산정해야 합니다.
+    </p>
+
+    <h3>5. 60대 이상 은퇴자 및 무직자</h3>
+    <p>
+      연금 소득이나 정부 지원금 및 자녀들의 용돈에 의존하는 고령층 채무자입니다. 소득 자체가 아주 미미하거나 일정치 않은 경우가 많아 개인회생 진행보다 오히려 파산 면책이 적합한 종류의 채무는 아닌지 면밀한 비교 조언이 요구됩니다. 무조건 회생만을 강요하기보다 채무자의 건강 상태와 근로 여건을 종합해 합리적이고 유리한 제도를 선택해 드립니다.
+    </p>
+  </section>
+
+  <!-- Section 4: 실시간 개인회생 변제금 자가 계산기 (체류시간 증대 요소) -->
+  <section id="calculator">
+    <span id="calculator-anchor" class="anchor"></span>
+    <h2>일산개인회생 자가 계산기 및 가용소득 추정 시스템</h2>
+    <p>
+      법원에 매달 납부하게 될 평균 변제금액과 나의 탕감률은 대략 얼마가 될지 미리 시뮬레이션해 보세요. 아래의 간단한 정보를 입력하시면 2026년 최저생계비 기준을 반영하여 실시간으로 예상 예상안을 계산해 드립니다.
+    </p>
+    
+    <div class="calculator-wrapper">
+      <div class="calculator-form">
+        <div class="calc-group">
+          <label for="calc-income">월 평균 순수 소득 (원 단위)</label>
+          <input type="number" id="calc-income" placeholder="예: 2500000" />
+        </div>
+        
+        <div class="calc-group">
+          <label for="calc-debt">총 채무 누적액 (원 단위)</label>
+          <input type="number" id="calc-debt" placeholder="예: 50000000" />
+        </div>
+        
+        <div class="calc-group">
+          <label for="calc-family">부양의무가 있는 가족 수 (본인 포함)</label>
+          <select id="calc-family">
+            <option value="1">1인 가구 (본인 홀로)</option>
+            <option value="2">2인 가구 (부양가족 1인)</option>
+            <option value="3">3인 가구 (부양가족 2인)</option>
+            <option value="4">4인 가구 이상 (부양가족 3인 이상)</option>
+          </select>
+        </div>
+        
+        <div class="calc-group">
+          <label for="calc-court">상담 및 관할 주소지</label>
+          <select id="calc-court">
+            <option value="uijeongbu">경기도 고양시 일산 관할 (의정부지방법원)</option>
+            <option value="seoul">서울시 직장 소재지 관할 (서울회생법원)</option>
+            <option value="other">기타 타 지역 관할 법원</option>
+          </select>
+        </div>
+        
+        <button type="button" class="calc-btn" onclick="calculateRehabilitation()">예상 변제 금액 및 탕감률 확인하기</button>
+      </div>
+      
+      <div id="calculator-result" class="calculator-result">
+        <h4 style="color:#166534; margin-top:0;">모의 자가 진단 결과 분석</h4>
+        <div class="result-item">
+          <span>2026년 기준 법정 최저생계비 보장액:</span>
+          <span id="res-living-cost" class="result-val">0 원</span>
+        </div>
+        <div class="result-item">
+          <span>예상 월 납입 변제금 (가용 소득):</span>
+          <span id="res-monthly-payment" class="result-val">0 원</span>
+        </div>
+        <div class="result-item">
+          <span>36개월 총 변제 금액 합계:</span>
+          <span id="res-total-payment" class="result-val">0 원</span>
+        </div>
+        <div class="result-item">
+          <span>예상 면책 탕감 혜택 금액:</span>
+          <span id="res-exemption" class="result-val">0 원</span>
+        </div>
+        <p style="font-size:0.85rem; color:#475569; margin:15px 0 0 0;">
+          본 모의 계산 결과는 대략적인 통계를 기반으로 도출된 단순 참고용 금액입니다. 신청인의 실제 재산 가치(청산가치) 보장 여부 및 최근 채무 증감 비율에 따라 월 변제 예정액은 변동될 수 있으므로 정밀 법률 컨설팅 상담을 받으시기 바랍니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: 비용 및 수임료 상세 분석 -->
+  <section id="cost-analysis">
+    <span id="cost-analysis-anchor" class="anchor"></span>
+    <h2>일산개인회생 신청 절차별 소요 비용 및 수임료 구조</h2>
+    <p>
+      개인회생을 신청할 때 채무자들이 가장 예민하게 체감하는 부분이 바로 진행 비용과 법률 대리인 수임 요금입니다. 많은 분들이 인터넷에서 가장 저렴한곳이나 제일 싼곳을 위주로 비교 순위를 검색하곤 하지만, 지나치게 낮은 요금을 제시하는 업체는 추후 기각이나 잦은 보정 명령에 무성의하게 대응하여 소중한 재기 기회를 무산시킬 수도 있습니다. 따라서 금액의 세부 항목과 어떤 혜택이 포함되는지 상세 비교해 보아야 합니다.
+    </p>
+    
+    <h3>주요 필수 비용 구성 항목</h3>
+    <ol>
+      <li><strong>정부 인지대:</strong> 법원에 사건을 신규 등록할 때 납부하는 기본 전자소송 수수료입니다.</li>
+      <li><strong>송달료:</strong> 채권자들에게 재판부의 안내서와 결정을 등기 우편으로 송달하는 요금이며, 채권자 수에 비례하여 계산됩니다.</li>
+      <li><strong>부채증명서 발급 대행료:</strong> 각 채권 금융사로부터 부채 명세를 정식 수집하기 위한 대행 실비입니다.</li>
+      <li><strong>법률대리인 보수 및 상담 컨설팅 비용:</strong> 신청서 작성, 개시 결정을 위한 변제계획안 설계, 법원의 보정 권고에 적시 대응하는 변호사 수임 금액입니다.</li>
+    </ol>
+
+    <table>
+      <thead>
+        <tr>
+          <th>구분 항목</th>
+          <th>평균 소요 금액대</th>
+          <th>특징 및 참고 주의 사항</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>법원 예납 인지대 및 송달료</td>
+          <td>₩150,000 ~ ₩350,000</td>
+          <td>채권자 수 및 부양가족 가구 인원 기준에 따라 국가 법원에 납부하는 실비</td>
+        </tr>
+        <tr>
+          <td>법률사무소 수임료 (컨설팅 포함)</td>
+          <td>₩1,200,000 ~ ₩2,200,000</td>
+          <td>사건의 난이도 및 채권자 수에 맞춰 분할 납부 이벤트 적용 가능</td>
+        </tr>
+        <tr>
+          <td>외부회생위원 선임금액</td>
+          <td>₩150,000 (해당 시 추가)</td>
+          <td>자영업자 및 영업소득 채무자 등 일부 법원 지정 예납 대상자 한정</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      일반적으로 법률 대리 수임료는 신청인의 경제적 사정을 배려해 3개월에서 최대 6개월간 무이자로 분할 납부할 수 있도록 이벤트를 상시 운용하는 곳이 많습니다. 초기 가입이나 착수 단계에서 목돈이 들지 않으므로 자금 압박을 크게 경감할 수 있습니다.
+    </p>
+  </section>
+
+  <!-- Section 6: 온라인 커뮤니티 여론 및 후기 분석 -->
+  <section id="community-review">
+    <span id="community-review-anchor" class="anchor"></span>
+    <h2>온라인 커뮤니티 여론 동향 분석 및 실제 이용자 내돈내산 후기 비교</h2>
+    <p>
+      네이버 지식인이나 구글 검색엔진을 포함하여 국내 유수의 커뮤니티인 디시인사이드는 물론 보배드림, 펨코(에펨코리아) 등 다양한 유저 게시판에는 하루에도 수십 건씩 일산개인회생 내돈내산 후기와 조언 요청 글이 등록되고 있습니다. 
+    </p>
+    <p>
+      실제 커뮤니티 여론에서 이용자들이 가장 크게 지적하는 점은 무책임한 브로커 업체의 존재와 불필요한 사은품 제공, 과장된 현금지원, 상품권 이벤트 등으로 현혹한 후 정작 보정 절차 단계에서 연락이 두절되거나 불성실하게 대응하는 경우입니다. 이에 따라 검증된 전문 업체를 활용하는 것이 제일 중요하다고 입을 모아 강조합니다.
+    </p>
+    <p>
+      회생 절차를 성공적으로 끝마친 이들의 핵심 조언은 아래와 같이 요약할 수 있습니다.
+    </p>
+    <ul>
+      <li>광고에 지나치게 사은품이나 현금성 혜택을 강조하는 온라인 사이트는 가입을 피하는 것이 안전합니다.</li>
+      <li>다이렉트 상담 통화 시 기각될 경우 100% 환불 조건이 계약서에 정확하게 기재되는지 필히 체크해야 합니다.</li>
+      <li>유튜브, 인스타그램, 페이스북, 트위터 같은 미디어 매체의 자극적인 홍보보다 실제 면책 허가를 끝까지 처리해 준 완결 이력을 확인하는 것이 추천됩니다.</li>
+    </ul>
+  </section>
+
+  <!-- Section 7: 개인회생 신청 필수 체크리스트 -->
+  <section>
+    <h2>개인회생 신청 전 채무자 필수 자가 체크리스트</h2>
+    <p>
+      신청 결정을 하기에 앞서 본인이 법적 요건에 완벽하게 부합하는 상태인지 스스로 점검해 보는 것이 좋습니다. 아래 8가지 요건 중 상당 부분을 충족해야 개시 결정 확률이 극대화됩니다.
+    </p>
+    <ol>
+      <li><strong>소득의 유무 확인:</strong> 정규직, 비정규직, 프리랜서, 자영업 여부를 막론하고 법정 최저생계비를 초과하는 고정적이고 확실한 반복 수입이 발생하는지 여부</li>
+      <li><strong>채무 총액 요건:</strong> 최소 1,000만 원 이상에서 신용채무 최대 10억 원, 담보부채무 최대 15억 원 이하 범위에 해당되는지 여부</li>
+      <li><strong>재산 비교 조건 (청산가치 보장의 원칙):</strong> 본인 명의의 부동산, 차량, 예금, 보험 해약 환급금 등의 합산 자산 가치보다 총 부채금 규모가 확연히 큰지 여부</li>
+      <li><strong>과거 신청 이력 확인:</strong> 이전에 개인회생 면책 결정을 받은 경험이 있다면 그 시점으로부터 최소 5년의 기간이 경과했는지 여부</li>
+      <li><strong>최근 채무 비율 체크:</strong> 최근 1년 이내에 발생한 신규 대출 및 카드 사용량이 전체 부채의 대부분을 차지하여 불성실 신청으로 보일 우려가 없는지 분석</li>
+    </ol>
+  </section>
+
+  <!-- Section 8: 자주 묻는 질문 (FAQ) -->
+  <section id="faq">
+    <span id="faq-anchor" class="anchor"></span>
+    <h2>자주 묻는 질문 (FAQ)</h2>
+    <dl>
+      <dt>Q1: 일산에 거주하면 반드시 의정부지방법원으로 서류를 접수해야 하나요?</dt>
+      <dd>A: 예, 그렇습니다. 고양시 일산 지역의 주민등록상 거주지 관할은 의정부지방법원입니다. 다만 채무자의 주된 근로지 및 회사 사무실의 주소지가 서울특별시에 있다면 서울회생법원으로 신청서를 제출할 수 있으므로, 본인의 조건에 맞춰 유리한 법원을 결정하여 대응하는 법률 컨설팅을 받으시길 권합니다.</dd>
+      
+      <dt>Q2: 직장에 이 사실이 알려지거나 급여 압류가 들어오면 어떻게 하나요?</dt>
+      <dd>A: 개인회생 제도는 신청과 동시에 법원에 금지명령 및 중지명령을 신청할 수 있습니다. 해당 명령이 송달되면 채권자들의 독촉 전화나 무분별한 추심, 자택 방문 및 직장 급여 압류 조치가 법적으로 차단됩니다. 또한 회사에 송달되는 별도의 문서는 없으므로 직장 동료들이 알지 못하게 안심하고 절차를 이행하실 수 있습니다.</dd>
+      
+      <dt>Q3: 변제 도중 부득이하게 실직하거나 월 소득이 현저히 감소하면 어떻게 되나요?</dt>
+      <dd>A: 개인회생 재신청 조치를 밟거나 기존 변제계획안의 수정안을 제출하여 법원의 승인을 얻는 정밀 조치가 필요합니다. 2026년도 인상된 생계비 기준에 부합하게끔 조절이 가능할 수도 있으므로 변제금이 수개월 이상 연체되어 사건이 중도 폐지되기 이전에 즉각적인 전문 조력을 받으시는 것이 현명한 대안입니다.</dd>
+    </dl>
+  </section>
+
+  <!-- Section 9: 신뢰할 수 있는 공식 외부 리소스 링크 -->
+  <section>
+    <h2>신뢰성 높은 공식 외부 정보 리소스 참조</h2>
+    <p>
+      더 깊이 있고 정확한 국가 지원 제도 및 공신력 있는 해설을 확인하시려면 아래의 공식 사이트들을 방문하여 최신 법률 규정과 실시간 정책 가이드를 비교 검토해 보시기 바랍니다.
+    </p>
+    <ul>
+      <li>
+        <a href="https://recoveryoflawso.koreahankang.com" target="_blank" rel="noopener">고양시 관할 의정부법원 지원 및 개인채무 재조정 실무 안내 페이지</a>
+        <br>일산 및 고양 거주 채무자들을 위한 관할 법원 업무 일정과 기본 제출 양식 가이드를 상세히 제공하는 통합 참조 링크입니다.
+      </li>
+      <li>
+        <a href="https://namu.wiki/w/%EA%B0%9C%EC%9D%B8%ED%9E%8C%EC%83%9D" target="_blank" rel="noopener">나무위키 개인회생 문서</a>
+        <br>시민들이 자발적으로 정리한 개인회생 제도의 기본 취지, 세부 장단점 분석, 실제 신청 경험자들이 겪은 생생한 절차상 유의 사항이 체계적으로 수록되어 있습니다.
+      </li>
+      <li>
+        <a href="https://help.scourt.go.kr" target="_blank" rel="noopener">대한민국 대법원 전자민원센터</a>
+        <br>개인회생 양식 내려받기, 사건번호 실시간 조회, 소송 비용 계산 요령 등 사법부에서 직접 운영하는 공신력 높은 공식 법률 포털 서비스입니다.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 10: 상세 견적 상담 문의 폼 (체류시간 극대화 및 고도화 수집 영역) -->
+  <section id="contact">
+    <span id="contact-anchor" class="anchor"></span>
+    <div class="contact-form-wrapper">
+      <h3>일산개인회생 무료 정밀 자격 진단 및 견적 신청</h3>
+      <p>
+        신청인의 채무 상태를 비공개로 조용히 진단해 드리며, 법적 구제 수단 적용 유무를 확인하는 데 소요되는 상담 요금은 전혀 발생하지 않습니다. 세밀한 답변 작성을 통해 체계적인 해법을 찾으십시오.
+      </p>
+      
+      <form action="/submit" method="POST">
+        <div class="form-grid">
+          
+          <div class="form-group">
+            <label for="name">상담 신청인 성함 (필수)</label>
+            <input type="text" id="name" name="name" placeholder="실명을 입력해 주세요" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">연락처 및 전화번호 (필수)</label>
+            <input type="tel" id="phone" name="phone" placeholder="예: 010-1234-5678" pattern="[0-9\-]+" required />
+          </div>
+
+          <div class="form-group">
+            <label for="residence">상세 주소 또는 관할 행정동 (필수)</label>
+            <select id="residence" name="residence" required>
+              <option value="">선택해 주세요</option>
+              <option value="일산동구">일산동구 (장항, 마두, 백석, 식사, 중산 등)</option>
+              <option value="일산서구">일산서구 (주엽, 대화, 탄현, 일산, 덕이 등)</option>
+              <option value="덕양구">덕양구 (화정, 행신, 삼송, 원흥, 지축 등)</option>
+              <option value="기타">기타 경기 한수이북 또는 타 지역</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="income-type">현재 근로 소득의 유형 (필수)</label>
+            <select id="income-type" name="income_type" required>
+              <option value="">선택해 주세요</option>
+              <option value="일반직장인">일반 기업체 직장인 (정규직)</option>
+              <option value="일용직비정규">일용직 / 계약직 / 알바</option>
+              <option value="자영업">개인 사업자 / 프리랜서</option>
+              <option value="기타무직">은퇴자 / 연금소득 / 주부 및 현재 무직</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="est-debt">예상하는 총 대출 채무 액수 (필수)</label>
+            <select id="est-debt" name="est_debt" required>
+              <option value="">선택해 주세요</option>
+              <option value="1천-3천">1,000만 원 이상 ~ 3,000만 원 미만</option>
+              <option value="3천-5천">3,000만 원 이상 ~ 5,000만 원 미만</option>
+              <option value="5천-1억">5,000만 원 이상 ~ 1억 원 미만</option>
+              <option value="1억이상">1억 원 이상 고액 채무</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="creditor-count">부채 채권자 금융기관 수</label>
+            <input type="number" id="creditor-count" name="creditor_count" placeholder="예: 5" />
+          </div>
+
+          <div class="form-group form-full">
+            <label for="call-time">원하시는 맞춤 상담 가능 시간대</label>
+            <select id="call-time" name="call_time">
+              <option value="상시">언제나 즉시 상담 가능</option>
+              <option value="오전">오전 시간대 (09:00 ~ 12:00)</option>
+              <option value="오후">오후 시간대 (13:00 ~ 18:00)</option>
+              <option value="퇴근후">퇴근 시간 이후 야간 상담</option>
+            </select>
+          </div>
+
+          <div class="form-group form-full">
+            <label for="message">상세한 사연 또는 신속한 처리를 위한 요청 사항</label>
+            <textarea id="message" name="message" rows="5" placeholder="현재 가계에 닥친 긴박한 사정(압류 위기, 독촉 상황 등)이나 특별한 고민 사항을 자세히 적어주시면 보다 깊이 있는 맞춤 안내를 설계해 드립니다."></textarea>
+          </div>
+
+          <div class="form-group form-full checkbox-group">
+            <input type="checkbox" id="privacy-agree" name="privacy_agree" required />
+            <label for="privacy-agree">개인정보 수집 및 비공개 전문 상담 활용 동의 (필수)</label>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn-cta" style="margin-top:25px;">무료 맞춤 포트폴리오 분석 신청하기</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // 2026 최저생계비 기준 개인회생 모의 계산기 스크립트
+    function calculateRehabilitation() {
+      const income = parseFloat(document.getElementById('calc-income').value) || 0;
+      const debt = parseFloat(document.getElementById('calc-debt').value) || 0;
+      const familySize = parseInt(document.getElementById('calc-family').value) || 1;
+      
+      // 2026 기준 중위소득 60% 최저생계비 산정 공식 반영
+      let baseLivingCost = 1538543; // 1인 가구 기준 실비
+      if (familySize === 2) {
+        baseLivingCost = 2548000;
+      } else if (familySize === 3) {
+        baseLivingCost = 3289000;
+      } else if (familySize >= 4) {
+        baseLivingCost = 4022000;
+      }
+
+      // 월 변제금 계산 (가용소득 = 월소득 - 법정생계비)
+      let monthlyPayment = income - baseLivingCost;
+      if (monthlyPayment < 0) {
+        monthlyPayment = 0;
+      }
+
+      // 36개월 기준 총 납부 금액 추정
+      let totalPayment = monthlyPayment * 36;
+      if (totalPayment > debt) {
+        totalPayment = debt;
+        monthlyPayment = debt / 36;
+      }
+
+      // 예상 면책 금액 탕감 혜택량 추정
+      let exemptionAmount = debt - totalPayment;
+      if (exemptionAmount < 0) {
+        exemptionAmount = 0;
+      }
+
+      // 결과 영역 갱신 및 노출 처리
+      document.getElementById('res-living-cost').innerText = Math.round(baseLivingCost).toLocaleString() + ' 원';
+      document.getElementById('res-monthly-payment').innerText = Math.round(monthlyPayment).toLocaleString() + ' 원';
+      document.getElementById('res-total-payment').innerText = Math.round(totalPayment).toLocaleString() + ' 원';
+      document.getElementById('res-exemption').innerText = Math.round(exemptionAmount).toLocaleString() + ' 원';
+      
+      document.getElementById('calculator-result').style.display = 'block';
+    }
+  </script>
+
+  
